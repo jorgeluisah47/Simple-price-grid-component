@@ -1,125 +1,182 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
 
-:root{
-    /* Colors */
-    --Light_gray: hsl(204, 43%, 93%);
-    --Cyan: hsl(179, 62%, 43%);
-    --Cyan_2: hsl(179, 62%, 47%);
-    --Bright_yellow: hsl(71, 73%, 54%);
-    --Grayish_blue: hsl(218, 22%, 67%);
+:root {
+  /* Colors */
+  --Light_gray: hsl(204, 43%, 93%);
+  --Cyan: hsl(179, 62%, 43%);
+  --Cyan_2: hsl(179, 62%, 47%);
+  --Bright_yellow: hsl(71, 73%, 54%);
+  --Grayish_blue: hsl(218, 22%, 67%);
 }
 
-html{
-    font-size: 62.5%;
-    font-family: 'Karla', sans-serif;
+html {
+  font-size: 62.5%;
+  font-family: "Karla", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100vh;
+  min-height: 800px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--Light_gray);
+}
+
+h1 {
+  color: var(--Cyan);
+}
+h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.8rem;
+}
+p {
+  line-height: 2;
+}
+
+footer {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--Cyan);
+  font-weight: 700;
+}
+
+@media all and (min-width: 375px) {
+  main {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    height: 100vh;
-    min-height: 800px;
-}*, *:before, *:after {
-    box-sizing: inherit;
-}
+    flex-direction: column;
+    box-shadow: 0px 0px 5px rgb(207, 207, 207);
+  }
 
-body{ background-color: var(--Light_gray); }
+  .grid__element {
+    max-width: 32rem;
+    padding: 2rem;
+  }
 
-main{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    box-shadow: 0px 0px 10px rgb(207, 207, 207);
-}
+  /* Primer elemento */
 
-h1{ color: var(--Cyan); }
-h2{ color: white; margin: 0; font-size: 1.8rem; }
-p{ line-height: 2; }
-
-footer{
-    text-align: center;
-    font-size: 1.1rem;
-    color: var(--Cyan);
+  .grid__element--a {
+    background-color: white;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  .grid__element--a > p {
+    line-height: 1.6;
+    font-size: 1.5rem;
+    color: var(--Grayish_blue);
+  }
+  .grid__element--a h2 {
+    font-size: 1.6rem;
     font-weight: 700;
+    color: var(--Bright_yellow);
+  }
+
+  /* Segundo elemento */
+
+  .grid__element--b {
+    background-color: var(--Cyan);
+  }
+  .grid__element--b h2 {
+    margin: 0;
+  }
+  .subscription {
+    display: flex;
+    align-items: center;
+  }
+  .subscription__price {
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 1rem 0 0;
+  }
+  .subscription__text {
+    color: white;
+    font-size: 1.4rem;
+    margin: 0;
+  }
+  .grid__element--b > p {
+    font-size: 1.6rem;
+    color: white;
+    margin: 0 0 2rem 0;
+  }
+  .button {
+    background-color: var(--Bright_yellow);
+    display: block;
+    text-align: center;
+    padding: 1.6rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 2px 10px rgb(122, 122, 122);
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+  }
+
+  /* Tercer elemento */
+
+  .grid__element--c {
+    background-color: var(--Cyan_2);
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+  .grid__element--c ul {
+    margin: 0;
+    list-style: none;
+    display: inline;
+  }
+  .grid__element--c ul li {
+    margin: 0.4rem 0;
+    font-size: 1.4rem;
+    color: white;
+  }
 }
 
-@media all and (min-width: 375px){
+@media all and (min-width: 768px) {
+  main {
+    width: 63.6rem;
+    display: grid;
+    grid-template-rows: 216px 26rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid__element {
+    max-width: 100%;
+    padding: 4rem 4rem;
+  }
+  .grid__element--a {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border-radius: 1rem 1rem 0 0;
+  }
+  .grid__element--a p {
+    font-size: 1.6rem;
+  }
+  .grid__element--a h2 {
+    margin-top: 2rem;
+    margin-bottom: 0;
+    font-size: 2rem;
+  }
 
-    .grid__element{
-        max-width: 32rem;
-        padding: 2rem;
-    }
+  .grid__element--b {
+    border-radius: 0 0 0 1rem;
+  }
 
-    /* Primer elemento */
+  .grid__element--c {
+    border-radius: 0 0 1rem 0;
+  }
 
-    .grid__element--a{
-        background-color: white;
-        border-radius: 0.5rem 0.5rem 0 0 ;
-    }
-    .grid__element--a > p{
-        line-height: 1.6;
-        font-size: 1.5rem;
-        color: var(--Grayish_blue);
-    }
-    .grid__element--a > p:first-of-type{
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: var(--Bright_yellow);
-    }
-
-    /* Segundo elemento */
-
-    .grid__element--b{
-        background-color: var(--Cyan);
-    }
-    .grid__element--b h2{
-        margin: 0;
-    }
-    .subscription{
-        display: flex;
-        align-items: center;
-    }
-    .subscription__price{
-        font-size: 3.4rem;
-        font-weight: 700;
-        color: white;
-        margin: 0 1rem 0 0;
-    }
-    .subscription__text{
-        color: white;
-        font-size: 1.4rem;
-        margin: 0;
-    }
-    .grid__element--b > p{
-        font-size: 1.6rem;
-        color: white;
-        margin: 0 0 2rem 0;
-    }
-    .button{
-        background-color: var(--Bright_yellow);
-        display: block;
-        text-align: center;
-        padding: 1.6rem;
-        border-radius: 0.5rem;
-        box-shadow: 0px 2px 10px rgb(122, 122, 122);
-        font-size: 1.6rem;
-        text-decoration: none;
-        color: white;
-        font-weight: 700;
-    }
-
-    /* Tercer elemento */
-
-    .grid__element--c{
-        background-color: var(--Cyan_2);
-        border-radius: 0 0 0.5rem 0.5rem;
-    }
-    .grid__element--c ul{
-        margin: 0;
-        list-style: none;
-        display: inline;
-    }
-    .grid__element--c ul li{
-        margin: 0.4rem 0;
-        font-size: 1.4rem;
-        color: white;
-    }
+  h1 {
+    font-size: 2.4rem;
+    margin: 0;
+  }
+  h2 {
+    margin: 0;
+  }
+  .button {
+    border-radius: 0.7rem;
+  }
 }
